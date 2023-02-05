@@ -31,6 +31,7 @@ public class Calculator implements ActionListener{           // interface implen
 	 JButton plusButton;
 	 JButton clearButton;
 	 boolean isOperatorClicked=false;
+	 String oldValue;
 	
 
 	public Calculator() {		//constructor
@@ -192,67 +193,144 @@ public class Calculator implements ActionListener{           // interface implen
 		if(e.getSource()==sevenButton){		// e.getSource used to check the whick button is clicked 
 			
 			if(isOperatorClicked==true) 
+			{
 				displayLabel.setText("7");
-			
-			else																						
-			
+				isOperatorClicked=false;
+			}
+			else {																						
 			displayLabel.setText(displayLabel.getText()+"7");										//String labelText =displayLabel.getText();	//displayLabel.setText(labelText+"7");
-		
+				}
 			}
 	
 		else if  (e.getSource()==eightButton){
 			if(isOperatorClicked==true) {
 			displayLabel.setText("8");
+			isOperatorClicked=false;
 			}
-			else
-			{
+			else {
+			
 				displayLabel.setText(displayLabel.getText()+"8");
-			}
+				}
 			}
 		
 		 else if  (e.getSource()==nineButton){
-				displayLabel.setText(displayLabel.getText()+"9");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("9");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"9");
+						}
+					}
 	
 		 else if  (e.getSource()==fourButton){
-				displayLabel.setText(displayLabel.getText()+"4");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("4");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"4");
+						}
+					}
 		 else if  (e.getSource()==fiveButton){
-				displayLabel.setText(displayLabel.getText()+"5");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("5");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"5");
+						}
+					}
 		 else if  (e.getSource()==sixButton){
-				displayLabel.setText(displayLabel.getText()+"6");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("6");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"6");
+						}
+					}
 		 else if  (e.getSource()==threeButton){
-				displayLabel.setText(displayLabel.getText()+"3");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("3");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"3");
+						}
+					}
 		 else if  (e.getSource()==twoButton){
-				displayLabel.setText(displayLabel.getText()+"2");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("2");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"2");
+						}
+					}
 		 else if  (e.getSource()==oneButton){
-				displayLabel.setText(displayLabel.getText()+"1");
-			}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("1");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"1");
+						}
+					}
 		 else if  (e.getSource()==dotButton){
-				displayLabel.setText(displayLabel.getText()+".");
-		 	}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText(".");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+".");
+						}
+					}
 		 else if  (e.getSource()==zeroButton){
-				displayLabel.setText(displayLabel.getText()+"0");
-		 	}
+			 if(isOperatorClicked==true) {
+					displayLabel.setText("0");
+					isOperatorClicked=false;
+					}
+					else {
+					
+						displayLabel.setText(displayLabel.getText()+"0");
+						}
+					}
+		
+		// operators and another clear keys
+		
 		 else if  (e.getSource()==equaltoButton){
 				displayLabel.setText("=");
+				oldValue=displayLabel.getText();
+				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==plusButton){
 				displayLabel.setText("+");
+				oldValue=displayLabel.getText();
 				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==subtractionButton){
 				displayLabel.setText("-");
+				oldValue=displayLabel.getText();
+				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==multiplicationButton){
 				displayLabel.setText("*");
+				oldValue=displayLabel.getText();
+				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==divisonButton){
 				displayLabel.setText("/");
+				oldValue=displayLabel.getText();
+				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==clearButton){
 				displayLabel.setText("");
