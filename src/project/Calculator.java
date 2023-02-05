@@ -30,7 +30,7 @@ public class Calculator implements ActionListener{           // interface implen
 	 JButton subtractionButton;
 	 JButton plusButton;
 	 JButton clearButton;
-	 boolean isOperatorClicked=false;
+	 boolean isOperatorClicked=false,isPlus=false,isSubtraction=false,isMultiplication=false,isDivision=false;
 	 String oldValue;
 	
 
@@ -305,31 +305,50 @@ public class Calculator implements ActionListener{           // interface implen
 						}
 					}
 		
-		// operators and another clear keys
+		// operators and  clear key
 		
-		 else if  (e.getSource()==equaltoButton){
-				displayLabel.setText("=");
+		 else if  (e.getSource()==equaltoButton)
+		 		{
+				
+				String newValue=displayLabel.getText();
+				
+				
+				    float oldValueF = Float.parseFloat(oldValue);
+				    float newValueF = Float.parseFloat(newValue);
+				    
+				    if (isPlus=true) 
+				    	 displayLabel.setText(Float.toString(oldValueF + newValueF));
+				    else if(isSubtraction)
+				    	 displayLabel.setText(Float.toString(oldValueF - newValueF));
+				    else if(isMultiplication)
+				    	displayLabel.setText(Float.toString(oldValueF * newValueF));
+				    else if(isDivision)
+				    	displayLabel.setText(Float.toString(oldValueF/newValueF));
+				    
+		 		}
+			
+		 else if  (e.getSource()==plusButton){	
+			 	isPlus=true;							// to know the which button is clicked when the "=" clicked 
 				oldValue=displayLabel.getText();
-				isOperatorClicked=true;
-		 	}
-		 else if  (e.getSource()==plusButton){
 				displayLabel.setText("+");
-				oldValue=displayLabel.getText();
 				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==subtractionButton){
+			 isSubtraction=true;
+			 oldValue=displayLabel.getText();
 				displayLabel.setText("-");
-				oldValue=displayLabel.getText();
 				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==multiplicationButton){
-				displayLabel.setText("*");
-				oldValue=displayLabel.getText();
+			 isMultiplication=true;
+			 oldValue=displayLabel.getText();
+				displayLabel.setText("*");	
 				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==divisonButton){
+			 isDivision=true;
+			 oldValue=displayLabel.getText();
 				displayLabel.setText("/");
-				oldValue=displayLabel.getText();
 				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==clearButton){
