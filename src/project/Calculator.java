@@ -182,9 +182,8 @@ public class Calculator implements ActionListener{           // interface implen
 		//when the user clicks the button automatically call the interface
 				// downwards , action specifying when button is clicked // display the button name when button pressed 
 		if(e.getSource()==sevenButton){		// e.getSource used to check the whick button is clicked 
-				String labelText =displayLabel.getText();
-			
-			displayLabel.setText(labelText+"7");
+																								//String labelText =displayLabel.getText();
+				displayLabel.setText(displayLabel.getText()+"7");											//displayLabel.setText(labelText+"7");
 			}
 		 else if  (e.getSource()==eightButton){
 			displayLabel.setText("8");
