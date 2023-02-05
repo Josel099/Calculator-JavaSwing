@@ -318,11 +318,12 @@ public class Calculator implements ActionListener{           // interface implen
 				    
 				    if (isPlus=true) 
 				    	 displayLabel.setText(Float.toString(oldValueF + newValueF));
-				    else if(isSubtraction)
+				    else if(isSubtraction=true)
+				    	
 				    	 displayLabel.setText(Float.toString(oldValueF - newValueF));
-				    else if(isMultiplication)
+				    else if(isMultiplication=true)
 				    	displayLabel.setText(Float.toString(oldValueF * newValueF));
-				    else if(isDivision)
+				    else if(isDivision=true)
 				    	displayLabel.setText(Float.toString(oldValueF/newValueF));
 				    
 		 		}
