@@ -29,6 +29,7 @@ public class Calculator implements ActionListener{           // interface implen
 	 JButton multiplicationButton;
 	 JButton subtractionButton;
 	 JButton plusButton;
+	 JButton clearButton;
 	
 
 	public Calculator() {		//constructor
@@ -163,6 +164,12 @@ public class Calculator implements ActionListener{           // interface implen
 		 plusButton.addActionListener(this); 
 		 jf.add(plusButton);
 		 
+		clearButton=new JButton("AC");
+		clearButton.setBounds(440,460,80,80);
+		clearButton.setFont(new Font("Arial",Font.BOLD,40));
+		clearButton.addActionListener(this);
+		jf.add(clearButton);
+		 
 		 
 		 
 		 
@@ -230,6 +237,9 @@ public class Calculator implements ActionListener{           // interface implen
 		 	}
 		 else if  (e.getSource()==divisonButton){
 				displayLabel.setText("/");
+		 	}
+		 else if  (e.getSource()==clearButton){
+				displayLabel.setText("");
 		 	}
 		
 						
