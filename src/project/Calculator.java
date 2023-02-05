@@ -39,7 +39,7 @@ public class Calculator implements ActionListener{           // interface implen
 		 jf.setLocation(420,250);		// location of the window when the window is opened(x axix,Y axix)
 		
 		 
-		 displayLabel=new JLabel("hello"); //  
+		 displayLabel=new JLabel(); //  
 		 displayLabel.setHorizontalAlignment(SwingConstants.RIGHT); // to align the text right || instead of this line we can also use "JLabel displayLabel=new JLabel("hello",SwingConstants.RIGHT);"
 		 displayLabel.setBounds(30, 50, 540, 40); // used to give size and padding for the label , 
 		 displayLabel.setBackground(Color.gray);
@@ -186,29 +186,29 @@ public class Calculator implements ActionListener{           // interface implen
 				displayLabel.setText(displayLabel.getText()+"7");											//displayLabel.setText(labelText+"7");
 			}
 		 else if  (e.getSource()==eightButton){
-			displayLabel.setText("8");
+			displayLabel.setText(displayLabel.getText()+"8");
 		}
 		 else if  (e.getSource()==nineButton){
-				displayLabel.setText("9");
+				displayLabel.setText(displayLabel.getText()+"9");
 			}
 	
 		 else if  (e.getSource()==fourButton){
-				displayLabel.setText("4");
+				displayLabel.setText(displayLabel.getText()+"4");
 			}
 		 else if  (e.getSource()==fiveButton){
-				displayLabel.setText("5");
+				displayLabel.setText(displayLabel.getText()+"5");
 			}
 		 else if  (e.getSource()==sixButton){
-				displayLabel.setText("6");
+				displayLabel.setText(displayLabel.getText()+"6");
 			}
 		 else if  (e.getSource()==threeButton){
-				displayLabel.setText("3");
+				displayLabel.setText(displayLabel.getText()+"3");
 			}
 		 else if  (e.getSource()==twoButton){
-				displayLabel.setText("2");
+				displayLabel.setText(displayLabel.getText()+"2");
 			}
 		 else if  (e.getSource()==oneButton){
-				displayLabel.setText("1");
+				displayLabel.setText(displayLabel.getText()+"1");
 			}
 		 else if  (e.getSource()==dotButton){
 				displayLabel.setText(".");
