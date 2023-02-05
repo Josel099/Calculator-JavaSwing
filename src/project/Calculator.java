@@ -30,6 +30,7 @@ public class Calculator implements ActionListener{           // interface implen
 	 JButton subtractionButton;
 	 JButton plusButton;
 	 JButton clearButton;
+	 boolean isOperatorClicked=false;
 	
 
 	public Calculator() {		//constructor
@@ -166,7 +167,7 @@ public class Calculator implements ActionListener{           // interface implen
 		 
 		clearButton=new JButton("AC");
 		clearButton.setBounds(440,460,80,80);
-		clearButton.setFont(new Font("Arial",Font.BOLD,40));
+		clearButton.setFont(new Font("Arial",Font.PLAIN,40));
 		clearButton.addActionListener(this);
 		jf.add(clearButton);
 		 
@@ -189,12 +190,26 @@ public class Calculator implements ActionListener{           // interface implen
 		//when the user clicks the button automatically call the interface
 				// downwards , action specifying when button is clicked // display the button name when button pressed 
 		if(e.getSource()==sevenButton){		// e.getSource used to check the whick button is clicked 
-																								//String labelText =displayLabel.getText();
-				displayLabel.setText(displayLabel.getText()+"7");											//displayLabel.setText(labelText+"7");
+			
+			if(isOperatorClicked==true) 
+				displayLabel.setText("7");
+			
+			else																						
+			
+			displayLabel.setText(displayLabel.getText()+"7");										//String labelText =displayLabel.getText();	//displayLabel.setText(labelText+"7");
+		
 			}
-		 else if  (e.getSource()==eightButton){
-			displayLabel.setText(displayLabel.getText()+"8");
-		}
+	
+		else if  (e.getSource()==eightButton){
+			if(isOperatorClicked==true) {
+			displayLabel.setText("8");
+			}
+			else
+			{
+				displayLabel.setText(displayLabel.getText()+"8");
+			}
+			}
+		
 		 else if  (e.getSource()==nineButton){
 				displayLabel.setText(displayLabel.getText()+"9");
 			}
@@ -218,16 +233,17 @@ public class Calculator implements ActionListener{           // interface implen
 				displayLabel.setText(displayLabel.getText()+"1");
 			}
 		 else if  (e.getSource()==dotButton){
-				displayLabel.setText(".");
+				displayLabel.setText(displayLabel.getText()+".");
 		 	}
 		 else if  (e.getSource()==zeroButton){
-				displayLabel.setText("0");
+				displayLabel.setText(displayLabel.getText()+"0");
 		 	}
 		 else if  (e.getSource()==equaltoButton){
 				displayLabel.setText("=");
 		 	}
 		 else if  (e.getSource()==plusButton){
 				displayLabel.setText("+");
+				isOperatorClicked=true;
 		 	}
 		 else if  (e.getSource()==subtractionButton){
 				displayLabel.setText("-");
