@@ -159,7 +159,8 @@ public class Calculator implements ActionListener { // interface implemented(abs
 
 		clearButton = new JButton("AC");
 		clearButton.setBounds(440, 460, 80, 80);
-		clearButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		//clearButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		Font  clearButton = new Font(Font.SANS_SERIF,  Font.BOLD, 10);
 		clearButton.addActionListener(this);
 		jf.add(clearButton);
 
